@@ -1,0 +1,14 @@
+site_name: Лабораторная работа №2
+site_description: Сравнение подходов к параллелизму в Python
+site_author: Дроздов Матвей
+
+theme:
+  name: material
+  language: ru
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: deep purple
+
+nav:
+  - Описание программ и результаты: index.md

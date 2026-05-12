@@ -1,0 +1,47 @@
+import random
+import psycopg2
+from passlib.context import CryptContext
+import requests
+
+pwd_context = CryptContext(schemes=["pbkdf2_sha256"], deprecated="auto")
+
+DB_CONFIG = {
+    "dbname": "finance_db",
+    "user": "postgres",
+    "password": "postgres",
+    "host": "localhost",
+    "port": "5432"
+}
+
+ARTICLE_IDS = [
+    71249,
+    71350,
+    71367,
+    71438,
+    71374,
+    71407
+]
+
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+    'Accept': 'application/json'
+}
+
+
+def hash_password(password: str):
+    return pwd_context.hash(password)
+
+
+def save_to_db(name, login, hashed_password):
+    try:
+        with psycopg2.connect(**DB_CONFIG) as conn:
+            with conn.cursor() as cur:
+                insert_query = """
+                    INSERT INTO "user" (name, login, hashed_password)
+                    VALUES (%s, %s, %s);
+                """
+                cur.execute(insert_query, (name, login, hashed_password))
+    except psycopg2.Error as e:
+        print(f"Ошибка БД при сохранении {login}: {e}")
+
+
