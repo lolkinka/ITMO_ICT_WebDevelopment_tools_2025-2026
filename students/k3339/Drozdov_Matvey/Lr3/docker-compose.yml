@@ -1,0 +1,59 @@
+services:
+  # 1. База данных
+  db:
+    image: postgres:15-alpine
+    container_name: finance_postgresql
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: finance_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d finance_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # 2. Брокер задач Redis
+  redis:
+    image: redis:7-alpine
+    container_name: finance_redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  # 3. Основное FastAPI приложение
+  web_api:
+    build: .
+    container_name: finance_fastapi_app
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+  # 4. Celery-воркер (Парсер)
+  parser:
+    build: ./parser
+    container_name: finance_parser_worker
+    restart: always
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/finance_db
+      - CELERY_BROKER_URL=redis://redis:6379/0
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+volumes:
+  postgres_data:

@@ -1,0 +1,21 @@
+site_name: Финансовое APi & Парсер
+site_description: Документация лабораторной работы 3
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      primary: black
+      accent: indigo
+  features:
+    - navigation.tabs
+    - content.code.copy
+
+nav:
+  - Главная: index.md
+  - Развертывание и запуск: installation.md
+  - Сервис API (FastAPI): api.md
+  - Фоновый Парсер (Celery): worker.md
