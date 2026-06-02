@@ -11,24 +11,28 @@
       
       
       
+        <link rel="prev" href="../installation/">
+      
+      
+        <link rel="next" href="../worker/">
       
       
         
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Финансовое APi & Парсер</title>
+        <title>Сервис API (FastAPI) - Финансовое APi & Парсер</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -47,7 +51,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#api-fastapi-gateway" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -81,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Финансовое APi &amp; Парсер" class="md-header__button md-logo" aria-label="Финансовое APi & Парсер" data-md-component="logo">
+    <a href=".." title="Финансовое APi &amp; Парсер" class="md-header__button md-logo" aria-label="Финансовое APi & Парсер" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -101,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Сервис API (FastAPI)
             
           </span>
         </div>
@@ -192,7 +201,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -211,7 +220,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/installation/" class="md-tabs__link">
+      <a href="../installation/" class="md-tabs__link">
         
   
   
@@ -228,9 +237,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="/api/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -249,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/worker/" class="md-tabs__link">
+      <a href="../worker/" class="md-tabs__link">
         
   
   
@@ -284,7 +295,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Финансовое APi &amp; Парсер" class="md-nav__button md-logo" aria-label="Финансовое APi & Парсер" data-md-component="logo">
+    <a href=".." title="Финансовое APi &amp; Парсер" class="md-nav__button md-logo" aria-label="Финансовое APi & Парсер" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -302,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -329,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
@@ -353,10 +364,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/api/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сервис API (FastAPI)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -372,6 +410,93 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Асинхронная архитектура эндпоинтов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Спецификация эндпоинта парсинга
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Спецификация эндпоинта парсинга">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вызов асинхронного парсера
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Вызов асинхронного парсера">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тело запроса (Request Body)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-202" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Успешный ответ (Response 202)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -383,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/worker/" class="md-nav__link">
+      <a href="../worker/" class="md-nav__link">
         
   
   
@@ -420,6 +545,83 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Асинхронная архитектура эндпоинтов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Спецификация эндпоинта парсинга
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Спецификация эндпоинта парсинга">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вызов асинхронного парсера
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Вызов асинхронного парсера">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тело запроса (Request Body)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-202" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Успешный ответ (Response 202)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -432,8 +634,49 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="api-fastapi-gateway">Сервис API (FastAPI Gateway)</h1>
+<p>Основное приложение FastAPI выполняет роль архитектурного шлюза (API Gateway). Оно предоставляет внешний интерфейс для взаимодействия с клиентом, валидирует входящие данные и управляет очередью фоновых задач.</p>
+<h2 id="_1">Асинхронная архитектура эндпоинтов</h2>
+<p>Внедрение <strong>Celery</strong> позволило перевести ресурсоемкие операции парсинга в неблокирующий режим. При отправке запроса основное API не ожидает окончания скачивания данных с целевого сайта, а мгновенно регистрирует задачу и освобождает поток для обслуживания других пользователей.</p>
+<hr />
+<h2 id="_2">Спецификация эндпоинта парсинга</h2>
+<h3 id="_3">Вызов асинхронного парсера</h3>
+<ul>
+<li><strong>URL:</strong> <code>/parse</code></li>
+<li><strong>Метод:</strong> <code>POST</code></li>
+<li><strong>Заголовки:</strong> <code>Content-Type: application/json</code></li>
+<li><strong>Статус успешного ответа:</strong> <code>202 Accepted</code> (означает, что задача принята в обработку)</li>
+</ul>
+<h4 id="request-body">Тело запроса (Request Body)</h4>
+<p>В качестве входных данных эндпоинт принимает объект JSON со списком уникальных числовых идентификаторов новостей StopGame:</p>
+<pre><code class="language-json">{
+  &quot;article_ids&quot;: [55000, 55001, 55002]
+}
+</code></pre>
+<h3 id="response-202">Успешный ответ (Response 202)</h3>
+<pre><code class="language-json">{
+  &quot;message&quot;: &quot;Parsing task background execution started&quot;,
+  &quot;task_id&quot;: &quot;9e1b21fa-14b8-4e8c-8f3b-67a6d88ffba2&quot;,
+  &quot;status&quot;: &quot;Dispatched&quot;
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -470,10 +713,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/", "features": ["navigation.tabs", "content.code.copy"], "search": "/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

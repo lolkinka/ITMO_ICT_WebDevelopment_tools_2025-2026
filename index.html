@@ -1,18 +1,18 @@
 
 <!doctype html>
-<html lang="ru" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Сравнение подходов к параллелизму в Python">
-      
-      
-        <meta name="author" content="Дроздов Матвей">
+        <meta name="description" content="Документация лабораторной работы 3">
       
       
       
+      
+      
+        <link rel="next" href="installation/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Лабораторная работа №2</title>
+        <title>Финансовое APi & Парсер</title>
       
     
     
@@ -60,10 +60,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -72,8 +74,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
-          Перейти к содержанию
+        <a href="#_1" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -84,11 +86,9 @@
     
       
 
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="." title="Лабораторная работа №2" class="md-header__button md-logo" aria-label="Лабораторная работа №2" data-md-component="logo">
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Финансовое APi &amp; Парсер" class="md-header__button md-logo" aria-label="Финансовое APi & Парсер" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,13 +102,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Лабораторная работа №2
+            Финансовое APi & Парсер
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Описание программ и результаты
+              Главная
             
           </span>
         </div>
@@ -116,7 +116,25 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -130,16 +148,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Поиск">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -150,7 +168,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Инициализация поиска
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -170,6 +188,93 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="installation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Развертывание и запуск
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="api/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Сервис API (FastAPI)
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="worker/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Фоновый Парсер (Celery)
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -183,16 +288,18 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Лабораторная работа №2" class="md-nav__button md-logo" aria-label="Лабораторная работа №2" data-md-component="logo">
+    <a href="." title="Финансовое APi &amp; Парсер" class="md-nav__button md-logo" aria-label="Финансовое APi & Парсер" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Лабораторная работа №2
+    Финансовое APi & Парсер
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -220,7 +327,7 @@
   <span class="md-ellipsis">
     
   
-    Описание программ и результаты
+    Главная
   
 
     
@@ -238,7 +345,7 @@
   <span class="md-ellipsis">
     
   
-    Описание программ и результаты
+    Главная
   
 
     
@@ -250,7 +357,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -259,256 +366,26 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Содержание
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Описание задачи
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Описание программ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Описание программ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.1 Задача суммирования
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.1 Задача суммирования">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multiprocessing_sumpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Многопроцессорность (multiprocessing_sum.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Многопроцессорность (multiprocessing_sum.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Как это работает:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-threading_sumpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Многопоточность (threading_sum.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Многопоточность (threading_sum.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Как это работает:
+        Компоненты системы
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-async_sumpy" class="md-nav__link">
-    <span class="md-ellipsis">
       
-        3. Асинхронность (async_sum.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Асинхронность (async_sum.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Как это работает:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-io-bound" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.2 Задача парсинга (I/O-bound)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.2 Задача парсинга (I/O-bound)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#async_parserpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Асинхронность (async_parser.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Асинхронность (async_parser.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Как это работает:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiprocess_parserpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Многопроцессорность (multiprocess_parser.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Многопроцессорность (multiprocess_parser.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Как это работает:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#threading_parserpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Многопоточность (threading_parser.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Многопоточность (threading_parser.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Как это работает:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Результаты измерений
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Анализ результатов и выводы
+        Схема взаимодействия
       
     </span>
   </a>
@@ -519,6 +396,87 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Развертывание и запуск
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Сервис API (FastAPI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="worker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Фоновый Парсер (Celery)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -536,7 +494,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -545,256 +503,26 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Содержание
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Описание задачи
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Описание программ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Описание программ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.1 Задача суммирования
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.1 Задача суммирования">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#multiprocessing_sumpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Многопроцессорность (multiprocessing_sum.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Многопроцессорность (multiprocessing_sum.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Как это работает:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-threading_sumpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Многопоточность (threading_sum.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Многопоточность (threading_sum.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Как это работает:
+        Компоненты системы
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-async_sumpy" class="md-nav__link">
-    <span class="md-ellipsis">
       
-        3. Асинхронность (async_sum.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Асинхронность (async_sum.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Как это работает:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-io-bound" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2.2 Задача парсинга (I/O-bound)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.2 Задача парсинга (I/O-bound)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#async_parserpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Асинхронность (async_parser.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Асинхронность (async_parser.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Как это работает:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiprocess_parserpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Многопроцессорность (multiprocess_parser.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Многопроцессорность (multiprocess_parser.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Как это работает:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#threading_parserpy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Многопоточность (threading_parser.py)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Многопоточность (threading_parser.py)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Как это работает:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Результаты измерений
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Анализ результатов и выводы
+        Схема взаимодействия
       
     </span>
   </a>
@@ -818,124 +546,34 @@
 
 
 
-<p>Вот готовая документация по вашей лабораторной работе. Она структурирована в академическом стиле и содержит все необходимые теоретические и практические выкладки для успешной сдачи (или защиты) задания.</p>
-<hr />
-<h1 id="python">Документация: Сравнение подходов к параллелизму и конкурентности в Python</h1>
-<h2 id="1">1. Описание задачи</h2>
-<p>Целью данной работы является реализация и сравнение трех подходов к выполнению задач в Python: <strong>многопроцессорности (multiprocessing)</strong>, <strong>многопоточности (threading)</strong> и <strong>асинхронности (asyncio)</strong>.</p>
-<hr />
-<h2 id="2">2. Описание программ</h2>
-<h3 id="21">2.1 Задача суммирования</h3>
-<h4 id="multiprocessing_sumpy">Многопроцессорность (<code>multiprocessing_sum.py</code>)</h4>
-<p>Этот скрипт реализует параллелизм на уровне операционной системы. </p>
-<h5 id="_1">Как это работает:</h5>
-<ul>
-<li>Модуль <code>multiprocessing</code> создает пул независимых рабочих процессов (по умолчанию равный количеству ядер процессора или переданному значению <code>chunks</code>).</li>
-<li>Каждый процесс получает свою собственную копию интерпретатора Python и собственное выделенное пространство в оперативной памяти.</li>
-<li>Благодаря этому процессы полностью обходят GIL и выполняются на разных ядрах процессора абсолютно одновременно.</li>
-<li>Функция <code>pool.starmap</code> распределяет диапазоны чисел между процессами и собирает результаты в единый список.</li>
-</ul>
-<hr />
-<h4 id="2-threading_sumpy">2. Многопоточность (<code>threading_sum.py</code>)</h4>
-<p>Этот скрипт реализует суммирование на основе потоков операционной системы в рамках одного процесса.</p>
-<h5 id="_2">Как это работает:</h5>
-<ul>
-<li>Модуль <code>threading</code> создает несколько потоков, которые делят между собой общую оперативную память программы.</li>
-<li>Для сбора результатов используется общий список <code>results</code>, куда каждый поток записывает вычисленную сумму строго по своему индексу (<code>index</code>). </li>
-<li>Из-за особенностей эталонной реализации Python, работу потоков контролирует GIL. </li>
-</ul>
-<hr />
-<h4 id="3-async_sumpy">3. Асинхронность (<code>async_sum.py</code>)</h4>
-<p>Этот скрипт использует <strong>кооперативную многозадачность</strong> на базе цикла событий (Event Loop) в рамках одного потока и одного процесса.</p>
-<h5 id="_3">Как это работает:</h5>
-<ul>
-<li>Модуль <code>asyncio</code> позволяет запускать задачи одновременно с помощью функции <code>asyncio.gather</code>.</li>
-<li>Функция вычисления <code>calculate_sum_async</code> помечена ключевым словом <code>async def</code>, что делает её корутиной.</li>
-<li>Однако внутри используется стандартная синхронная функция <code>sum(range(...))</code>. Поскольку она не содержит ключевого слова <code>await</code>, она становится <strong>блокирующей</strong>.</li>
-</ul>
-<hr />
-<h3 id="22-io-bound">2.2 Задача парсинга (I/O-bound)</h3>
-<h4 id="async_parserpy">Асинхронность (<code>async_parser.py</code>)</h4>
-<p>Реализует полностью неблокирующий подход к сетевым запросам и работе с базой данных.</p>
-<h5 id="_4">Как это работает:</h5>
-<ul>
-<li>Для сетевых запросов используется асинхронная библиотека <code>aiohttp</code>, а для базы данных — драйвер <code>asyncpg</code> с пулом соединений (<code>create_pool</code>).</li>
-<li>Внедрен инструмент <code>asyncio.Semaphore(5)</code>, который ограничивает количество одновременных запросов к серверу до 5. </li>
-<li>Цикл событий не простаивает: пока один запрос ждет ответа от сервера или БД, управление передается другой корутине.</li>
-</ul>
-<h4 id="multiprocess_parserpy">Многопроцессорность (<code>multiprocess_parser.py</code>)</h4>
-<h5 id="_5">Как это работает:</h5>
-<ul>
-<li>Создается пул процессов (<code>multiprocessing.Pool</code>), каждый из которых берет на себя один ID новости.</li>
-<li>Внутри процессов используется стандартная синхронная библиотека <code>requests</code> и синхронное подключение к БД (через <code>psycopg2</code>).</li>
-<li>Полная изоляция: ожидание ответа от сервера в одном процессе никак не влияет на работу остальных.</li>
-</ul>
-<h4 id="threading_parserpy">Многопоточность (<code>threading_parser.py</code>)</h4>
-<h5 id="_6">Как это работает:</h5>
-<ul>
-<li>Создаются объекты <code>threading.Thread</code> для каждого URL. </li>
-<li>В отличие от математической задачи, здесь GIL не мешает. Когда синхронная функция <code>requests.get()</code> ждет ответа по сети, поток засыпает и "отпускает" GIL, позволяя другим потокам в это время отправить свои сетевые запросы.</li>
-</ul>
-<hr />
-<h2 id="3">3. Результаты измерений</h2>
-<p><em>Примечание: Время выполнения при расчете суммы до 100 000 000.</em></p>
-<table>
-<thead>
-<tr>
-<th>Подход</th>
-<th>Время выполнения (сек)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Многопроцессорность</strong></td>
-<td>~ 0.62</td>
-</tr>
-<tr>
-<td><strong>Многопоточность</strong></td>
-<td>~ 1.55</td>
-</tr>
-<tr>
-<td><strong>Асинхронность</strong></td>
-<td>~ 1.54</td>
-</tr>
-</tbody>
-</table>
-<p><em>Примечание: Время выполнения при расчете парсинге.</em></p>
-<table>
-<thead>
-<tr>
-<th>Подход</th>
-<th>Время выполнения (сек)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Многопроцессорность</strong></td>
-<td>~ 1.5112</td>
-</tr>
-<tr>
-<td><strong>Многопоточность</strong></td>
-<td>~ 1.8442</td>
-</tr>
-<tr>
-<td><strong>Асинхронность</strong></td>
-<td>~ 1.9012</td>
-</tr>
-<tr>
-<td>---</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="4">4. Анализ результатов и выводы</h2>
-<p>Сравнение времени выполнения:</p>
+<h1 id="_1">Архитектура проекта</h1>
+<p>Проект построен на базе <strong>микросервисной архитектуры</strong> с распределением обязанностей между изолированными Docker-контейнерами.</p>
+<h2 id="_2">Компоненты системы</h2>
+<p>Система состоит из четырех основных сервисов:</p>
 <ol>
-<li>В математической задаче лучше справился multiprocessing из-за разбиения на 4 ядра</li>
-<li>В задаче парсинга разрыв между технологиями оказался минимальным. Все три подхода успешно справились с задачей распараллеливания сетевых запросов. </li>
-<li><strong>Threading</strong> и <strong>Multiprocessing</strong> показали высокую скорость, так как во время ожидания ответа от сети (I/O sleep) процессор переключался на другие задачи. </li>
-<li><strong>Asyncio</strong> в данном конкретном тесте показал результат чуть медленнее остальных. Это связано с так называемой "проблемой малых дистанций": на парсинг всего 5 ссылок программа тратит больше времени на поднятие архитектуры (инициализацию Event Loop, создание сессии <code>aiohttp</code> и установку пула соединений <code>asyncpg</code>), чем на сами запросы.</li>
+<li><strong><code>web_api</code> (FastAPI)</strong> — шлюз приложения (API Gateway). Принимает запросы от клиентов, отвечает за аутентификацию, бизнес-логику трекера и постановку тяжелых задач в очередь.</li>
+<li><strong><code>redis</code> (Брокер)</strong> — высокопроизводительное хранилище данных в оперативной памяти. Используется Celery в качестве брокера сообщений (очереди задач).</li>
+<li><strong><code>parser</code> (Celery Воркер)</strong> — изолированный сервис, который слушает очередь задач в Redis. При появлении задачи асинхронно скачивает данные с сайта StopGame и сохраняет их в базу данных.</li>
+<li><strong><code>db</code> (PostgreSQL)</strong> — реляционная база данных, хранящая информацию о пользователях, транзакциях и результатах парсинга.</li>
 </ol>
+<h2 id="_3">Схема взаимодействия</h2>
+<p>```text
+[Клиент] 
+   │ (HTTP POST /parse)
+   ▼
+[FastAPI (web_api)] ──(Мгновенный ответ 202 Accepted)──&gt; [Клиент]
+   │
+   │ (celery.send_task)
+   ▼
+[Redis (Брокер очереди)]
+   ▲
+   │ (Подхватывает задачу)
+   ▼
+[Celery Воркер (parser)]
+   │
+   ├─(Асинхронные HTTP запросы)─&gt; [StopGame API]
+   │
+   └─(Запись данных через asyncpg)─&gt; [PostgreSQL (db)]</p>
 
 
 
@@ -985,7 +623,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
