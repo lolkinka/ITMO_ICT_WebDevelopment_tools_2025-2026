@@ -1,0 +1,11 @@
+site_name: Finance Manager API
+theme:
+  name: material
+  palette:
+    primary: teal
+
+nav:
+  - Введение: index.md
+  - Авторизация и Безопасность: auth.md
+  - База данных (Модели): models.md
+  - Справочник API: api.md
