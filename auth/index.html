@@ -6,15 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Документация лабораторной работы 3">
-      
       
       
       
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../api/">
+        <link rel="next" href="../models/">
       
       
         
@@ -25,7 +23,7 @@
     
     
       
-        <title>Развертывание и запуск - Финансовое APi & Парсер</title>
+        <title>Авторизация и Безопасность - Finance Manager API</title>
       
     
     
@@ -62,12 +60,10 @@
   
     
     
-      
     
     
     
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -88,9 +84,11 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Финансовое APi &amp; Парсер" class="md-header__button md-logo" aria-label="Финансовое APi & Парсер" data-md-component="logo">
+    <a href=".." title="Finance Manager API" class="md-header__button md-logo" aria-label="Finance Manager API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,13 +102,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Финансовое APi & Парсер
+            Finance Manager API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Развертывание и запуск
+              Авторизация и Безопасность
             
           </span>
         </div>
@@ -118,25 +116,7 @@
     </div>
     
       
-        <form class="md-header__option" data-md-component="palette">
-  
     
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -190,93 +170,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Развертывание и запуск
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../api/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Сервис API (FastAPI)
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../worker/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Фоновый Парсер (Celery)
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -290,18 +183,16 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Финансовое APi &amp; Парсер" class="md-nav__button md-logo" aria-label="Финансовое APi & Парсер" data-md-component="logo">
+    <a href=".." title="Finance Manager API" class="md-nav__button md-logo" aria-label="Finance Manager API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Финансовое APi & Парсер
+    Finance Manager API
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -320,7 +211,7 @@
   <span class="md-ellipsis">
     
   
-    Главная
+    Введение
   
 
     
@@ -356,7 +247,7 @@
   <span class="md-ellipsis">
     
   
-    Развертывание и запуск
+    Авторизация и Безопасность
   
 
     
@@ -374,7 +265,7 @@
   <span class="md-ellipsis">
     
   
-    Развертывание и запуск
+    Авторизация и Безопасность
   
 
     
@@ -403,60 +294,10 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Требования к окружению
+        Как получить доступ
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Пошаговый быстрый старт
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Пошаговый быстрый старт">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 1: Подготовка файлов
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 2: Сборка и запуск
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 3: Проверка статуса контейнеров
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -475,14 +316,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
+      <a href="../models/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Сервис API (FastAPI)
+    База данных (Модели)
   
 
     
@@ -502,14 +343,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../worker/" class="md-nav__link">
+      <a href="../api/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Фоновый Парсер (Celery)
+    Справочник API
   
 
     
@@ -552,60 +393,10 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Требования к окружению
+        Как получить доступ
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Пошаговый быстрый старт
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Пошаговый быстрый старт">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 1: Подготовка файлов
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 2: Сборка и запуск
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Шаг 3: Проверка статуса контейнеров
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -626,24 +417,15 @@
 
 
 
-<h1 id="_1">Развертывание и запуск системы</h1>
-<p>Весь оркестр сервисов полностью контейнеризирован и автоматизирован. Развертывание, настройка сети и управление зависимостями выполняются с помощью <strong>Docker Compose</strong>.</p>
-<h2 id="_2">Требования к окружению</h2>
-<p>Перед запуском убедитесь, что на вашей хост-машине установлены:
-* <strong>Docker Desktop</strong> (включает в себя Docker Engine и Docker Compose)
-* Свободные порты на хосте: <code>8000</code> (API), <code>5433</code> (PostgreSQL), <code>6379</code> (Redis)</p>
-<hr />
-<h2 id="_3">Пошаговый быстрый старт</h2>
-<h3 id="1">Шаг 1: Подготовка файлов</h3>
-<p>Убедитесь, что структура вашего проекта соответствует требованиям. Файлы зависимостей <code>requirements.txt</code> должны содержать библиотеки <code>celery</code> и <code>redis</code> как для основного API, так и для парсера.</p>
-<h3 id="2">Шаг 2: Сборка и запуск</h3>
-<p>Откройте терминал в корневой папке проекта (<code>Lr3/</code>) и выполните команду для принудительной сборки образов и запуска контейнеров:</p>
-<pre><code class="language-bash">docker compose up --build
-</code></pre>
-<h3 id="3">Шаг 3: Проверка статуса контейнеров</h3>
-<p>Откройте новое окно терминала и проверьте, что все четыре контейнера успешно запустились и работают:</p>
-<pre><code class="language-bash">docker compose ps
-</code></pre>
+<h1 id="_1">Авторизация и Безопасность</h1>
+<p>API использует механизм защиты на основе <strong>JWT (JSON Web Token)</strong>. Большинство эндпоинтов требуют передачи валидного токена в заголовке запроса.</p>
+<h2 id="_2">Как получить доступ</h2>
+<ol>
+<li><strong>Регистрация</strong>: Создайте нового пользователя через эндпоинт <code>POST /register</code>. Пароль будет автоматически захэширован перед сохранением в базу.</li>
+<li><strong>Логин</strong>: Отправьте <code>username</code> и <code>password</code> на эндпоинт <code>POST /login</code>. В ответ сервер вернет <code>access_token</code>.</li>
+<li><strong>Авторизация</strong>: Вставьте полученный токен в заголовок следующих запросов:
+   <code>Authorization: Bearer &lt;ваш_access_token&gt;</code></li>
+</ol>
 
 
 
@@ -693,7 +475,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
